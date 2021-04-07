@@ -23,10 +23,30 @@
   padding: 0 10px;
 }
 
-.search {
+.search form{
   display: flex;
   text-align: center;
   justify-content: center;
-  
-  
+  margin: 0 10px;
+}
+
+.searchIcon {
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+
+
+.searchInput{
+  border: 0;
+  width: 0;
+  transition: width 0.2s ease-in;
+}
+
+.searchInput.active{
+  width: 200px;
+}
+
+.searchInput:focus{
+  outline: none;
 }

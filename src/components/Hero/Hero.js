@@ -10,9 +10,8 @@ const Hero = () => {
       <Card>
         <div style={{ padding: "50px 0" }}>
           <Logo />
-          
         </div>
-        <Navbar/>
+        <Navbar />
       </Card>
     </div>
   );

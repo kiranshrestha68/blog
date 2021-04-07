@@ -1,34 +1,51 @@
-import React from "react";
+import React, {useState} from "react";
 import "./navbar.css";
 import SearchIcon from "@material-ui/icons/Search";
+import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
+
+  const[search, setSearch] = useState(false);
+
+  const submitSearch = (e) => {
+    e.preventDefault();
+    alert("searched");
+  };
+
+  const openSearch = () => {
+    setSearch(true);
+  }
+
+  const searchClass = search?'searchInput active':'searchInput';
+
   return (
     <div className="navbar">
       <ul className="navbarMenu">
         <li>
           {" "}
-          <a href="#"> Home </a>
+          <NavLink to="/"> Home </NavLink>
         </li>
         <li>
           {" "}
-          <a href="#"> About Us</a>
+          <NavLink to="aboutus"> About Us</NavLink>
         </li>
         <li>
           {" "}
-          <a href="#"> Post </a>
+          <NavLink to="post"> Post </NavLink>
         </li>
         <li>
           {" "}
-          <a href="#"> Contact Us </a>
+          <NavLink to="contactus"> Contact Us </NavLink>
         </li>
       </ul>
 
-      <div className="search"> 
-        <input type="text" placeholder="Search"/>
-        <span className="search-icon">
-          <SearchIcon />
-        </span>
+      <div className="search">
+        <form onSubmit={submitSearch}>
+          <input type="text" placeholder="Search"  className={searchClass}/>
+          <span onClick={openSearch} className="searchIcon">
+            < SearchIcon />
+          </span>
+        </form>
       </div>
     </div>
   );

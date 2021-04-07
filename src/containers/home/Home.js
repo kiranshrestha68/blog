@@ -5,7 +5,7 @@ import './style.css';
 const Home = () => {
     return (
         <div>
-            <Header/>
+            home
         </div>
     )
 }
