@@ -2,7 +2,8 @@ import React from "react";
 import "./blogpost.css";
 import Card from "../UI/card/Card";
 
-const Blogpost = () => {
+const Blogpost = (props) => {
+  console.log(props);
   return (
     <div className="blogPostContainer">
       <Card>
@@ -16,7 +17,15 @@ const Blogpost = () => {
         </div>
 
         <div className="postImageContainer">
-          <img src="https://www.thewowstyle.com/wp-content/uploads/2014/12/best-love-quotes.jpg" alt="Post Image" />
+          <img
+            src="https://www.thewowstyle.com/wp-content/uploads/2014/12/best-love-quotes.jpg"
+            alt="Post Image"
+          />
+        </div>
+
+        <div className="postContent"> 
+        <h3> Post Title</h3>
+        <p> lorem spum </p>
         </div>
       </Card>
     </div>
